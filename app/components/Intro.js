@@ -20,7 +20,7 @@ const Intro = () => {
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ type: "spring", stiffness: 80, damping: 18 }}
-          className="fixed inset-0 bg-[#fdf571] z-[9999] overflow-hidden"
+          className="fixed inset-0 bg-[#fdf571] z-[9999] overflow-hidden modal-selection select-text"
         >
           <motion.div
             className="absolute inset-0 flex items-center"

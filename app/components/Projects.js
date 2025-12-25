@@ -230,7 +230,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -350,7 +350,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -453,7 +453,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -556,7 +556,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -678,7 +678,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -791,7 +791,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">
@@ -898,7 +898,7 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50"
+            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div className=" w-full  p-6 ">
               <h2 className="text-6xl font-extrabold">

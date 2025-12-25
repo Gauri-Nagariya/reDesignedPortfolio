@@ -95,7 +95,7 @@ export default function HeroWithNav() {
               words={[
                 "I design. I build. I improve.",
                 "Crafting modern, responsive web experiences.",
-                "Focused on performance, usability, and clean code.",
+                // "Focused on performance, usability, and clean code.",
               ]}
               loop={0}
               cursor
@@ -107,7 +107,7 @@ export default function HeroWithNav() {
           </p>
 
           <h3 className="text-4xl font-semibold whitespace-nowrap">
-            Open to freelance and full-time roles.
+            Full-Stack / MERN Developer
           </h3>
           <button
   className="
@@ -148,15 +148,16 @@ export default function HeroWithNav() {
 
         <motion.div
           style={{ scale: imgScale, x: imgX, y: imgY }}
-          className="absolute bottom-[-120] right-1/8 z-30"
+          className="absolute bottom-[-210] right-1/8 z-30"
         >
-          <div className="relative w-[308px] h-[220px]">
-            <Image
+          <div className="relative bg-black text-white border-0 w-[308px] h-[220px]">
+            {/* <Image
               src="/pexels.jpg"
               alt="Background"
               fill
               className="object-contain border"
-            />
+            /> */}
+            <p className="font-sans text-[10vh] leading-11 py-7 px-4 font-extrabold tracking-tighter">ABOUT <span className="pl-39">ME</span></p>
           </div>
         </motion.div>
       </div>
@@ -168,7 +169,7 @@ export default function HeroWithNav() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed top-0 left-0 w-full h-screen flex flex-row bg-[#fdf571] z-50"
+            className="fixed top-0 left-0 w-full h-screen flex flex-row bg-[#fdf571] z-50 modal-selection select-text"
           >
             <div
               className="flex justify-between p-6 w-full text-black"
