@@ -793,22 +793,22 @@ export default function HeroWithNav() {
                   className="md:px-0 md:text-nowrap md:space-y-6 md:pt-0  px-0 text-nowrap space-y-3"
                 >
                   <li>
-                    <a href="#about">
+                    <a href="#about"  onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> ABOUT
                     </a>
                   </li>
                   <li>
-                    <a href="#skills">
+                    <a href="#skills"  onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> SKILLS
                     </a>
                   </li>
                   <li>
-                    <a href="#projects">
+                    <a href="#projects"  onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> PROJECTS
                     </a>
                   </li>
                   <li>
-                    <a href="#certificates">
+                    <a href="#certificates"  onClick={() => setShowNav(false)}>
                       <span className="text-gray-300"># </span>CERTIFICATES
                     </a>
                   </li>
