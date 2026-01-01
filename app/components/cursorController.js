@@ -1,5 +1,5 @@
 export const cursorEvents = {
-  enter: ({ text = "", bg = "#f28f36", color = "#000", size = 70 } = {}) => {
+  enter: ({ text = "", bg = "#fcf585", color = "#000", size = 70 } = {}) => {
     window.dispatchEvent(
       new CustomEvent("cursor-enter", { detail: { text, bg, color, size } })
     );

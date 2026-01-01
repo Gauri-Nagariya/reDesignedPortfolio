@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cursorEvents } from "../components/cursorController";
 
@@ -27,22 +27,49 @@ const Projects = () => {
   const [showNav6, setShowNav6] = useState(false);
   const [showNav7, setShowNav7] = useState(false);
 
+const containerRef = useRef(null); // visible area
+const contentRef = useRef(null);   // cards
+const [width, setWidth] = useState(0);
+
+useEffect(() => {
+  const calcWidth = () => {
+    if (containerRef.current && contentRef.current) {
+      setWidth(
+        contentRef.current.scrollWidth -
+        containerRef.current.offsetWidth + 40
+      );
+    }
+  };
+
+  calcWidth();
+  window.addEventListener("resize", calcWidth);
+  return () => window.removeEventListener("resize", calcWidth);
+}, []);
+
   return (
-    <motion.div id="projects" className="bg-white h-[120vh]  px-0  py-10 pt-20">
-      <div className="border-b border-gray-300 mx-10 text-2xl py-6">
+    <motion.div id="projects" className="bg-white md:h-[120vh]  md:px-0  md:py-10 md:pt-20
+                                            h-[90vh]  px-0  py-10 pt-10">
+      <div className="md:border-b md:border-gray-300 md:mx-10 md:text-2xl md:py-6
+                      border-b border-gray-300 mx-6 text-2xl py-2">
         What I’ve Built
       </div>
-      <div className=" py-8 text-7xl font-semibold px-10">
+      <div className=" md:py-8 md:text-7xl md:font-semibold md:px-10
+                        py-4 text-5xl font-semibold px-6">
         Real projects, real learning.
       </div>
 
-      <motion.div className="overflow-hidden scroll-smooth py-14 hide-scrollbar touch-none">
+      <motion.div
+        ref={containerRef}
+      className="md:overflow-hidden md:scroll-smooth md:py-14 md:hide-scrollbar 
+                                overflow-hidden scroll-smooth py-6 hide-scrollbar">
         <motion.div
-          className="flex gap-20 px-6 cursor-grab"
+           ref={contentRef}
+          className="md:flex md:gap-20 md:px-6 md:cursor-grab  flex gap-6 px-6 cursor-grab"
           drag="x"
-          dragConstraints={{ left: -4060, right: 0 }}
+          dragConstraints={{ left: -width , right: 0 }}
           dragElastic={0.1}
           dragMomentum={false}
+           whileTap={{ cursor: "grabbing" }}
         >
           <motion.div
            onMouseEnter={() =>
@@ -56,14 +83,14 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav1(true)}
-              href=""
-              className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
-            >
-              <p className={`${BlackOpsOne.className} text-7xl`}>CareerBoard</p>
+              href={null}
+              className="md:bg-transparent md:h-[16vh] md:w-fit md:text-white md:rounded-4xl md:flex md:justify-center md:items-center md:flex-col md:cursor-pointer">
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>CareerBoard</p>
               <p>A Job Application Tracker Web Application</p>
             </button>
           </motion.div>
@@ -80,14 +107,17 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
+
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav2(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl`}>MyDrive</p>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>MyDrive</p>
               <p>A full backend + server-rendered project</p>
             </button>
           </motion.div>
@@ -104,14 +134,16 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav3(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl`}>MediTrack</p>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>MediTrack</p>
               <p>A Job Application Tracker Web Application</p>
             </button>
           </motion.div>
@@ -128,14 +160,16 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav4(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl`}>Lumeo</p>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>Lumeo</p>
               <p>AI-powered Text-to-Image Generator</p>
             </button>
           </motion.div>
@@ -152,14 +186,16 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav5(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl`}>shortify</p>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>shortify</p>
               <p>A Job Application Tracker Web Application</p>
             </button>
           </motion.div>
@@ -176,14 +212,16 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav6(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl`}>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl`}>
                 Weather Forecaster
               </p>
               <p>A Weather Forecast Web Application</p>
@@ -202,24 +240,28 @@ const Projects = () => {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
                   }
-          className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          // className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold">
+          className="md:flex-none md:bg-gray-950 md:h-110 md:w-180 md:rounded-4xl md:flex md:items-center md:justify-center md:text-white md:text-2xl md:font-bold
+                    flex-none bg-gray-950 h-80 w-100 rounded-4xl flex items-center justify-center text-white text-md font-bold">
             <button
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => setShowNav7(true)}
-              href=""
+              href={null}
               className=" bg-transparent h-[16vh] w-fit text-white rounded-4xl flex justify-center items-center flex-col cursor-pointer"
             >
-              <p className={`${BlackOpsOne.className} text-7xl px-10`}>
+              <p className={`${BlackOpsOne.className} md:text-7xl text-5xl px-10`}>
                 NOTES TAKER APP
               </p>
               <p> File-Based Notes Management Web Application</p>
             </button>
           </motion.div>
 
-          <motion.div className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold"></motion.div>
+          {/* <motion.div className="flex-none bg-gray-950 h-110 w-180 rounded-4xl flex items-center justify-center text-white text-2xl font-bold"></motion.div> */}
         </motion.div>
       </motion.div>
 
+
+{/* nav1 */}
       <AnimatePresence>
         {showNav1 && (
           <motion.div
@@ -230,12 +272,13 @@ const Projects = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed flex flex-row top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+            className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                        fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
           >
-            <div className=" w-full  p-6 ">
-              <h2 className="text-6xl font-extrabold">
+            <div className=" md:w-full  md:p-6 md:pb-0 w-full  p-6 pb-0">
+              <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
                 CAREERBOARD <br />{" "}
-                <span className=" text-2xl">
+                <span className=" md:text-2xl text-xl">
                   A Job Application Tracker Web Application
                 </span>
               </h2>
@@ -249,7 +292,7 @@ const Projects = () => {
                 deadlines, and focus more on interview preparation and skill
                 development.
               </p>
-              <div className="text-xl text-justify py-4">
+              <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
                 <h1 className="font-extrabold">Features</h1>
                 <ul className="list-disc list-inside pl-4">
                   <li>Secure authentication using JWT</li>
@@ -266,7 +309,7 @@ const Projects = () => {
                   <li>Clean UI using Ant Design & Tailwind CSS</li>
                 </ul>
               </div>
-              <div className=" text-lg">
+              <div className=" md:text-lg md:block hidden">
                 <h1 className="font-extrabold text-xl">Technology Stack</h1>
                 <p>
                   <span className=" font-extrabold">Frontend</span> React.js
@@ -284,7 +327,8 @@ const Projects = () => {
                 </p>
               </div>
             </div>
-            <div className="h-full w-full flex flex-col right-0 items-end">
+            <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0 
+                          h-full w-full flex flex-col-reverse left-0 items-start mb-10">
               <div className="top-0">
                 <button
                  onMouseEnter={() =>
@@ -296,9 +340,10 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" })
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
                   }
-                  className="px-10 py-4 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+                  className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                              px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
                   onClick={() => setShowNav1(false)}
                 >
                   Close
@@ -316,20 +361,21 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" }) 
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
                   }
-                className="right-0 flex flex-col justify-end px-10 my-0 bottom-0 my-120 mx-30">
+                className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                          left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6">
                   <a
                     href="https://job-application-tracker-peach-seven.vercel.app/"
                     target="_blank"
-                    className="font-bold text-4xl py-4"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
                   >
                     LIVE PROJECT
                   </a>
                   <a
                     href="https://github.com/Gauri-Nagariya/JobApplicationTracker"
                     target="_blank"
-                    className="font-bold text-4xl py-4"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
                   >
                     GITHUB
                   </a>
@@ -340,7 +386,8 @@ const Projects = () => {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
+{/* nav2 */}
+      {/* <AnimatePresence>
         {showNav2 && (
           <motion.div
                   onMouseLeave={() =>
@@ -419,7 +466,7 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" })
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
                   }
                 className="right-0 flex flex-col justify-end px-10 my-0 bottom-0 my-120 mx-30">
                   <a
@@ -441,9 +488,125 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
-
+      </AnimatePresence> */}
       <AnimatePresence>
+  {showNav2 && (
+    <motion.div
+      onMouseLeave={() =>
+        cursorEvents.leave({ bg: "black", color: "#fff" })
+      }
+      initial={{ y: "-100%" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-100%" }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                 fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+    >
+      {/* LEFT CONTENT */}
+      <div className="md:w-full md:p-6 md:pb-0 w-full p-6 pb-0">
+        <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+          MYDRIVE <br />
+          <span className="md:text-2xl text-xl">
+            Drive Backend Project
+          </span>
+        </h2>
+
+        <p className="text-xl pt-4 text-justify">
+          A full backend + server-rendered project built with Node.js,
+                Express, MongoDB, JWT, Multer, and EJS. Users can register,
+                login, upload files, view them, delete them, download them, and
+                update their profile. All uploaded files are stored directly
+                inside MongoDB using Binary Buffer (not locally).
+        </p>
+
+        <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+          <h1 className="font-extrabold">Features</h1>
+          <ul className="list-disc list-inside pl-4">
+            <li>User Registration & Login with JWT</li>
+            <li>Password hashing using Bcrypt</li>
+            <li>File upload using Multer</li>
+            <li>Files stored directly in MongoDB</li>
+            <li>View, Download & Delete files</li>
+            <li>Profile update</li>
+            <li>Form validation</li>
+            <li>Server-side rendering with EJS</li>
+          </ul>
+        </div>
+
+        <div className="md:text-lg md:block hidden">
+          <h1 className="font-extrabold text-xl">Technology Stack</h1>
+          <p>
+            Node.js, Express.js, MongoDB Atlas, JWT, Multer, EJS,
+            dotenv, bcrypt
+          </p>
+        </div>
+      </div>
+
+      {/* RIGHT ACTIONS */}
+      <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0
+                      h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+        {/* CLOSE BUTTON */}
+        <div className="top-0">
+          <button
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "CLOSE",
+                bg: "black",
+                color: "white",
+                size: 100,
+              })
+            }
+            onMouseLeave={() =>
+              cursorEvents.leave({ bg: "black", color: "#fff" })
+            }
+            className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                       px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+            onClick={() => setShowNav2(false)}
+          >
+            Close
+          </button>
+        </div>
+
+        {/* LINKS */}
+        <div>
+          <div
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "CLICK",
+                bg: "black",
+                color: "white",
+                size: 100,
+              })
+            }
+            onMouseLeave={() =>
+              cursorEvents.leave({ bg: "black", color: "#fff" })
+            }
+            className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                       left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6"
+          >
+            <a
+              href="https://drive-x6zy.onrender.com/"
+              target="_blank"
+              className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+            >
+              LIVE PROJECT
+            </a>
+            <a
+              href="https://github.com/Gauri-Nagariya/Drive_BackendProject"
+              target="_blank"
+              className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+            >
+              GITHUB
+            </a>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+{/* nav3 */}
+      {/* <AnimatePresence>
         {showNav3 && (
           <motion.div
                   onMouseLeave={() =>
@@ -502,7 +665,7 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" }) 
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
                   }
                   className="px-10 py-4 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
                   onClick={() => setShowNav3(false)}
@@ -522,7 +685,7 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" }) 
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
                   }
                 className="right-0 flex flex-col justify-end px-10 my-0 bottom-0 my-120 mx-30">
                   <a
@@ -544,9 +707,126 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+ <AnimatePresence>
+  {showNav3 && (
+    <motion.div
+      onMouseLeave={() =>
+        cursorEvents.leave({ bg: "black", color: "#fff" })
+      }
+      initial={{ y: "-100%" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-100%" }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                 fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+    >
+      {/* LEFT CONTENT */}
+      <div className="md:w-full md:p-6 md:pb-0 w-full p-6 pb-0">
+        <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+          MYDRIVE <br />
+          <span className="md:text-2xl text-xl">
+            Drive Backend Project
+          </span>
+        </h2>
 
-      <AnimatePresence>
+        <p className="text-xl pt-4 text-justify">
+          A full backend + server-rendered project built with Node.js,
+                Express, MongoDB, JWT, Multer, and EJS. Users can register,
+                login, upload files, view them, delete them, download them, and
+                update their profile. All uploaded files are stored directly
+                inside MongoDB using Binary Buffer (not locally).
+        </p>
+
+        <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+          <h1 className="font-extrabold">Features</h1>
+          <ul className="list-disc list-inside pl-4">
+            <li>User Registration & Login with JWT</li>
+            <li>Password hashing using Bcrypt</li>
+            <li>File upload using Multer</li>
+            <li>Files stored directly in MongoDB</li>
+            <li>View, Download & Delete files</li>
+            <li>Profile update</li>
+            <li>Form validation</li>
+            <li>Server-side rendering with EJS</li>
+          </ul>
+        </div>
+
+        <div className="md:text-lg md:block hidden">
+          <h1 className="font-extrabold text-xl">Technology Stack</h1>
+          <p>
+            Node.js, Express.js, MongoDB Atlas, JWT, Multer, EJS,
+            dotenv, bcrypt
+          </p>
+        </div>
+      </div>
+
+      {/* RIGHT ACTIONS */}
+      <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0
+                      h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+        {/* CLOSE BUTTON */}
+        <div className="top-0">
+          <button
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "CLOSE",
+                bg: "black",
+                color: "white",
+                size: 100,
+              })
+            }
+            onMouseLeave={() =>
+              cursorEvents.leave({ bg: "black", color: "#fff" })
+            }
+            className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                       px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+            onClick={() => setShowNav3(false)}
+          >
+            Close
+          </button>
+        </div>
+
+        {/* LINKS */}
+        <div>
+          <div
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "CLICK",
+                bg: "black",
+                color: "white",
+                size: 100,
+              })
+            }
+            onMouseLeave={() =>
+              cursorEvents.leave({ bg: "black", color: "#fff" })
+            }
+            className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                       left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6"
+          >
+            <a
+              href="https://drive-x6zy.onrender.com/"
+              target="_blank"
+              className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+            >
+              LIVE PROJECT
+            </a>
+            <a
+              href="https://github.com/Gauri-Nagariya/Drive_BackendProject"
+              target="_blank"
+              className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+            >
+              GITHUB
+            </a>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+{/* nav4 */}
+      {/* <AnimatePresence>
         {showNav4 && (
           <motion.div
                   onMouseLeave={() =>
@@ -624,7 +904,7 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" }) 
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
                   }
                   className="px-10 py-4 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
                   onClick={() => setShowNav4(false)}
@@ -644,7 +924,7 @@ const Projects = () => {
                     })
                   }
                   onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "white", color: "#fff" }) 
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
                   }
                 className="right-0 flex flex-col justify-end px-10 my-0 bottom-0 my-120 mx-30">
                   <a
@@ -666,9 +946,133 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
+      </AnimatePresence> */}
+      <AnimatePresence>
+        {showNav4 && (
+          <motion.div
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                        fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+          >
+            <div className=" md:w-full  md:p-6 md:pb-0 w-full  p-6 pb-0">
+              <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+                LUMEO <br />{" "}
+                <span className=" md:text-2xl text-xl">
+                  AI-Powered Text to Image Generator
+                </span>
+              </h2>
+
+              <p className="text-xl pt-4 text-justify">
+               An AI-powered Text-to-Image Generator transforms your imagination into reality. Simply describe your vision, and our engine instantly creates a high-quality, visually stunning image. This application is perfect for designers, creators, or anyone exploring their creativity. It requires no design skills—just type your idea, watch the magic happen, and download or share your masterpiece.
+              </p>
+              <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+                <h1 className="font-extrabold">Features</h1>
+                <ul className="list-disc list-inside pl-4">
+                 <li>AI-powered text-to-image generation in real time</li>
+                  <li>
+                    High-quality image preview with download & share options
+                  </li>
+                  <li>Secure user authentication (JWT-based login/signup)</li>
+                  <li>
+                    Razorpay payment integration for credit-based image
+                    generation
+                  </li>
+                  <li>
+                    User profile management (update username, email, password)
+                  </li>
+                  <li>
+                    Form validation and error handling using express-validator
+                  </li>
+                  <li>
+                    Responsive UI with smooth animations and toast notifications
+                  </li>
+                </ul>
+              </div>
+              <div className=" md:text-lg md:block hidden">
+                <h1 className="font-extrabold text-xl">Technology Stack</h1>
+ <p>
+                  <span className=" font-extrabold">Frontend</span> React, React
+                  Router DOM Tailwind CSS, Framer Motion Vite, Axios React
+                  Toastify
+                </p>
+                <p>
+                  <span className=" font-extrabold">Backend</span> Node.js,
+                  Express.js MongoDB, Mongoose JWT, Bcrypt CORS, Dotenv, Nodemon
+                </p>
+                {/* <p>
+                  <span className=" font-extrabold">Database</span> MongoDB
+                  (Atlas)
+                </p> */}
+              </div>
+            </div>
+            <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0 
+                          h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+              <div className="top-0">
+                <button
+                 onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLOSE",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
+                  }
+                  className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                              px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+                  onClick={() => setShowNav4(false)}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div>
+                <div 
+                  onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLICK",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+                className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                          left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6">
+                  <a
+                    href="https://lumeo-text-to-image-generator.vercel.app/"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    LIVE PROJECT
+                  </a>
+                  <a
+                    href="https://github.com/Gauri-Nagariya/Lumeo-text-to-image-generator"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    GITHUB
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
-      <AnimatePresence>
+
+{/* nav5 */}
+      {/* <AnimatePresence>
         {showNav5 && (
           <motion.div
                   onMouseLeave={() =>
@@ -779,9 +1183,123 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
+      </AnimatePresence> */}
+ <AnimatePresence>
+        {showNav5 && (
+          <motion.div
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                        fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+          >
+            <div className=" md:w-full  md:p-6 md:pb-0 w-full  p-6 pb-0">
+              <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+                SHORTIFY <br />{" "}
+                <span className=" md:text-2xl text-xl">
+                   Secure URL Shortening & QR Code Generator
+                </span>
+              </h2>
+
+              <p className="text-xl pt-4 text-justify">
+                 This project is a secure URL Shortener web application that
+                allows users to convert long URLs into short, shareable links
+                using Nano ID. Authenticated users can generate QR codes for
+                shortened URLs and download them for offline use. The
+                application includes proper authentication, validation, and a
+                clean, responsive interface built for ease of use.
+              </p>
+              <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+                <h1 className="font-extrabold">Features</h1>
+                <ul className="list-disc list-inside pl-4">
+                   <li>User authentication (Register, Login, Logout)</li>
+                  <li>Secure URL shortening using Nano ID</li>
+                  <li>QR code generation for shortened URLs</li>
+                  <li>Downloadable QR codes</li>
+                  <li>Form validation and protected routes</li>
+                  <li>Responsive UI with Bootstrap</li>
+                </ul>
+              </div>
+              <div className=" md:text-lg md:block hidden">
+                <h1 className="font-extrabold text-xl">Technology Stack</h1>
+                 <p>
+                  <span className="font-extrabold">Frontend</span> React.js,
+                  Bootstrap, QRCode React
+                </p>
+                <p>
+                  <span className="font-extrabold">Backend</span> Node.js,
+                  Express.js, JWT Authentication, Nano ID
+                </p>
+                <p>
+                  <span className="font-extrabold">Database</span> MongoDB
+                </p>
+              </div>
+            </div>
+            <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0 
+                          h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+              <div className="top-0">
+                <button
+                 onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLOSE",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
+                  }
+                  className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                              px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+                  onClick={() => setShowNav5(false)}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div>
+                <div 
+                  onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLICK",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+                className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                          left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6">
+                  <a
+                    href="https://shortify-two.vercel.app/"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    LIVE PROJECT
+                  </a>
+                  <a
+                    href="https://github.com/Gauri-Nagariya/shortify"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    GITHUB
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
-      <AnimatePresence>
+{/* nav6 */}
+      {/* <AnimatePresence>
         {showNav6 && (
           <motion.div
                   onMouseLeave={() =>
@@ -886,9 +1404,118 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
+      </AnimatePresence> */}
+ <AnimatePresence>
+        {showNav6 && (
+          <motion.div
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                        fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+          >
+            <div className=" md:w-full  md:p-6 md:pb-0 w-full  p-6 pb-0">
+              <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+                REACT WEATHER APP <br />{" "}
+                <span className=" md:text-2xl text-xl">
+                   Real-Time Weather Forecast & Interactive Map
+                </span>
+              </h2>
+
+              <p className="text-xl pt-4 text-justify">
+                This React-based weather application provides real-time weather
+                updates and a 7-day forecast for any searched location. It
+                features an interactive map to visualize locations, along with
+                search history and input validation to ensure a smooth and
+                user-friendly experience across devices.
+              </p>
+              <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+                <h1 className="font-extrabold">Features</h1>
+                <ul className="list-disc list-inside pl-4">
+                   <li>Real-time weather data for searched locations</li>
+                  <li>7-day weather forecast with detailed insights</li>
+                  <li>Interactive maps using Leaflet.js</li>
+                  <li>Search history with input validation</li>
+                  <li>Responsive UI for mobile and desktop</li>
+                  <li>Clean and modern user interface</li>
+                </ul>
+              </div>
+              <div className=" md:text-lg md:block hidden">
+                <h1 className="font-extrabold text-xl">Technology Stack</h1>
+                 <p>
+                  <span className="font-extrabold">Frontend</span> React.js, CSS
+                </p>
+                <p>
+                  <span className="font-extrabold">APIs & Libraries</span>{" "}
+                  Weather API, Leaflet.js, React-Leaflet
+                </p>
+              </div>
+            </div>
+            <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0 
+                          h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+              <div className="top-0">
+                <button
+                 onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLOSE",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
+                  }
+                  className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                              px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+                  onClick={() => setShowNav6(false)}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div>
+                <div 
+                  onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLICK",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+                className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                          left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6">
+                  <a
+                    href="https://weather-forecast-web-app-mu.vercel.app/"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    LIVE PROJECT
+                  </a>
+                  <a
+                    href="https://github.com/Gauri-Nagariya/Weather-Forecast-Web-App"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    GITHUB
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
-      <AnimatePresence>
+{/* nav7 */}
+      {/* <AnimatePresence>
         {showNav7 && (
           <motion.div
                   onMouseLeave={() =>
@@ -1000,9 +1627,126 @@ const Projects = () => {
             </div>
           </motion.div>
         )}
+      </AnimatePresence> */}
+      <AnimatePresence>
+        {showNav7 && (
+          <motion.div
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="md:fixed md:flex md:flex-row md:top-0 md:left-0 md:w-full md:h-screen md:bg-[#fdf571] md:z-50 md:modal-selection md:select-text
+                        fixed flex flex-col top-0 left-0 w-full h-screen bg-[#fdf571] z-50 modal-selection select-text"
+          >
+            <div className=" md:w-full  md:p-6 md:pb-0 w-full  p-6 pb-0">
+              <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
+                NOTES TAKER APP <br />{" "}
+                <span className=" md:text-2xl text-xl">
+                   File-Based Notes Management Web Application
+                </span>
+              </h2>
+
+              <p className="text-xl pt-4 text-justify">
+                Notes Taker is a lightweight web application that allows users
+                to create, view, and edit notes directly from the browser. The
+                app works entirely without a database, using Node.js file system
+                (fs) module to store notes as .txt files, making it simple,
+                fast, and easy to set up.
+              </p>
+              <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
+                <h1 className="font-extrabold">Features</h1>
+                <ul className="list-disc list-inside pl-4">
+                    <li>Create new notes through a simple web interface</li>
+                  <li>View all saved notes from the local notes folder</li>
+                  <li>Edit existing notes directly within the application</li>
+                  <li>File-based storage using Node.js fs module</li>
+                  <li>No database required</li>
+                  <li>Responsive and clean UI using TailwindCSS</li>
+                </ul>
+              </div>
+              <div className=" md:text-lg md:block hidden">
+                <h1 className="font-extrabold text-xl">Technology Stack</h1>
+                 <p>
+                  <span className="font-extrabold">Frontend</span> EJS (Embedded
+                  JavaScript Templates)
+                </p>
+                <p>
+                  <span className="font-extrabold">Styling</span> TailwindCSS
+                </p>
+                <p>
+                  <span className="font-extrabold">Backend</span> Express.js
+                </p>
+                <p>
+                  <span className="font-extrabold">Storage</span> Node.js fs
+                  (File System) Module
+                </p>
+              </div>
+            </div>
+            <div className="md:h-full md:w-full md:flex md:flex-col md:right-0 md:items-end md:mb-0 
+                          h-full w-full flex flex-col-reverse left-0 items-start mb-10">
+              <div className="top-0">
+                <button
+                 onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLOSE",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" })
+                  }
+                  className="md:px-10 md:py-4 md:h-10 md:w-fit md:text-black md:font-black md:text-2xl md:rounded md:cursor-pointer
+                              px-6 py-0 h-10 w-fit text-black font-black text-2xl rounded cursor-pointer"
+                  onClick={() => setShowNav7(false)}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div>
+                <div 
+                  onMouseEnter={() =>
+                    cursorEvents.enter({
+                      text: "CLICK",
+                      bg: "black",
+                      color: "white",
+                      size: 100,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    cursorEvents.leave({ bg: "black", color: "#fff" }) 
+                  }
+                className="md:right-0 md:flex md:flex-col md:gap-0 md:justify-end md:px-10 md:my-0 md:bottom-0 md:my-120 md:mx-30
+                          left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6">
+                  <a
+                    href="https://weather-forecast-web-app-mu.vercel.app/"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    LIVE PROJECT
+                  </a>
+                  <a
+                    href="https://github.com/Gauri-Nagariya/Weather-Forecast-Web-App"
+                    target="_blank"
+                    className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
+                  >
+                    GITHUB
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
+
     </motion.div>
   );
 };
 
 export default Projects;
+
