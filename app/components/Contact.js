@@ -104,7 +104,7 @@ const Contact = () => {
       ref={ref}
       style={{ backgroundColor: bgColor }}
       className="md:h-[160vh] md:flex md:flex-col md:items-center md:overflow-hidden md:relative md:pt-20  
-                  h-[140vh] flex flex-col items-center overflow-hidden relative pt-20"
+                  h-[135vh] flex flex-col items-center overflow-hidden relative pt-20"
     >
       <motion.div className="md:flex md:flex-row md:w-full md:pb-8  flex flex-row w-full pb-0">
         <div
@@ -195,8 +195,8 @@ const Contact = () => {
         <br /> Feel free to reach out.
       </motion.div>
       <motion.div
-        className="md:w-full md:text-[30vh] md:font-extrabold md:tracking-tighter md:text-white md:bottom-0 md:pt-10 md:px-6
-      w-full text-[8vh] font-extrabold tracking-tighter text-white bottom-0 pt-6 px-0
+        className="md:w-full md:text-[30vh] md:font-extrabold md:tracking-tighter md:text-white md:bottom-0 md:pt-10 md:px-6 md:justify-center md:flex
+      w-full text-[9vh] font-extrabold tracking-tighter text-white bottom-0 pt-6 px-6 justify-center flex
       "
       >
         <p>Let’sConnect</p>

@@ -599,7 +599,7 @@ export default function HeroWithNav() {
             }
             onClick={() => setShowNav(true)}
             className="
-              cursor-pointer text-lg flex mx-56 right-0 text-white px-6 text-nowrap py-3 rounded-lg z-20 relative
+              cursor-pointer text-lg flex mx-64 right-0 text-white px-6 text-nowrap py-3 rounded-lg z-20 relative
               md:cursor-pointer md:text-lg md:flex md:mx-340 md:right-0 md:text-white md:px-6 md:text-nowrap md:py-3 md:rounded-lg md:z-20 md:relative
             "
           >
@@ -610,7 +610,7 @@ export default function HeroWithNav() {
         <motion.div
           style={{ y: bottomY }}
           className="
-            absolute bottom-10 left-3 text-white flex flex-col gap-4 z-20
+            absolute bottom-18 left-3 text-white flex flex-col gap-4 z-20
             md:absolute md:bottom-10 md:left-8 md:text-white md:flex md:flex-col md:gap-4 md:z-20
           "
         >
@@ -728,11 +728,11 @@ export default function HeroWithNav() {
           >
             <p
               className="
-        font-sans text-[3vh] font-extrabold tracking-tighter text-start pl-3 leading-3
+        font-sans text-[3vh] font-extrabold tracking-tighter text-start pl-3 leading-4
         md:text-[10vh] md:tracking-tighter md:text-left md:pl-0 md:leading-11
       "
             >
-              ABOUT <span className="ml-10 md:pl-25">ME</span>
+              ABOUT <span className="ml-[38px] md:pl-25">ME</span>
             </p>
           </div>
         </motion.div>
@@ -869,7 +869,7 @@ export default function HeroWithNav() {
                 </a>
               </div>
 
-              <div className="w-full py-10 pl-10 md:w-full md:py-8 md:pl-20">
+              <div className="w-full py-10 pl-10 pb-20 md:w-full md:py-8 md:pl-20 md:pb-0">
                 <button
                   onMouseEnter={() =>
                     cursorEvents.enter({

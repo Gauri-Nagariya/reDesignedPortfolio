@@ -22,7 +22,7 @@ export default function About() {
                   h-[70vh] pt-0 text-justify bg-black flex items-center justify-center text-white border-0"
     >
       <p className="md:text-6xl md:font-normal md:px-18 md:flex md:flex-wrap md:gap-x-2 md:leading-18  md:text-justify
-                    text-xl font-normal px-4 flex flex-wrap gap-x-2 leading-6  text-justify">
+                    text-xl font-normal px-4 flex flex-wrap gap-x-2 leading-6  text-justify ">
         {text.split(" ").map((word, i) => {
           const color = useTransform(
             scrollYProgress,
