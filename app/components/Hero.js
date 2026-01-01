@@ -599,7 +599,7 @@ export default function HeroWithNav() {
             }
             onClick={() => setShowNav(true)}
             className="
-              cursor-pointer text-lg flex mx-64 right-0 text-white px-6 text-nowrap py-3 rounded-lg z-20 relative
+              cursor-pointer text-lg flex mx-60 right-0 text-white px-6 text-nowrap py-3 rounded-lg z-20 relative
               md:cursor-pointer md:text-lg md:flex md:mx-340 md:right-0 md:text-white md:px-6 md:text-nowrap md:py-3 md:rounded-lg md:z-20 md:relative
             "
           >
