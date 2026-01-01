@@ -103,7 +103,7 @@ const Contact = () => {
     <motion.div
       ref={ref}
       style={{ backgroundColor: bgColor }}
-      className="md:h-[160vh] md:flex md:flex-col md:items-center md:overflow-hidden md:relative md:pt-30  
+      className="md:h-[160vh] md:flex md:flex-col md:items-center md:overflow-hidden md:relative md:pt-24  
                   h-[135vh] flex flex-col items-center overflow-hidden relative pt-28"
     >
       <motion.div className="md:flex md:flex-row md:w-full md:pb-8  flex flex-row w-full pb-0">
