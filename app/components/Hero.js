@@ -644,22 +644,33 @@ export default function HeroWithNav() {
           </h3>
 
           <button
+                      onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "",
+                bg: "transparent",
+                color: "black",
+                size: 10,
+              })
+            }
+          onMouseLeave={() =>
+              cursorEvents.leave({ bg: "transparent", color: "#fff" })
+            }
             className="
               group bg-white text-black w-70 h-20 rounded-full border-2
               py-2 flex justify-between px-2
               hover:bg-black hover:cursor-none
-              transition-all duration-300 hover:text-white
+              transition-all duration-200 hover:text-white
               md:group md:bg-white md:text-black md:w-70 md:h-20 md:rounded-full md:border-2
               md:py-2 md:flex md:justify-between md:px-2
               md:hover:bg-black md:hover:cursor-none
-              md:transition-all md:duration-300 md:hover:text-white
+              md:transition-all md:duration-200 md:hover:text-white
             "
           >
             <a href="#contact" className="pt-2 md:pt-2">
               <span
                 className="
-                  text-2xl px-4 transition-colors duration-300
-                  md:text-2xl md:px-4 md:transition-colors md:duration-300
+                  text-2xl px-4 transition-colors duration-200
+                  md:text-2xl md:px-4 md:transition-colors md:duration-200
                 "
               >
                 Get in touch
@@ -669,10 +680,10 @@ export default function HeroWithNav() {
                 className="
                   text-4xl px-3 py-2 my-0 ml-9 rounded-full
                   group-hover:bg-[#fdf571] group-hover:text-black
-                  transition-all duration-300
+                  transition-all duration-200
                   md:text-4xl md:px-3 md:py-2 md:my-0 md:ml-9 md:rounded-full
                   md:group-hover:bg-[#fdf571] md:group-hover:text-black
-                  md:transition-all md:duration-300
+                  md:transition-all md:duration-200
                 "
               >
                 →
