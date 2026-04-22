@@ -535,7 +535,7 @@ export default function HeroWithNav() {
   const bottomY = useTransform(
     scrollY,
     [scrollStart, scrollEnd],
-    [0, -moveUpDistance]
+    [0, -moveUpDistance],
   );
 
   const imgScale = useTransform(scrollY, [100, 300], [1, 5]);
@@ -603,7 +603,7 @@ export default function HeroWithNav() {
               md:cursor-pointer md:text-lg md:flex md:mx-340 md:right-0 md:text-white md:px-6 md:text-nowrap md:py-3 md:rounded-lg md:z-20 md:relative
             "
           >
-            Click Me
+            MENU
           </button>
         </div>
 
@@ -644,46 +644,40 @@ export default function HeroWithNav() {
           </h3>
 
           <button
-                      onMouseEnter={() =>
-              cursorEvents.enter({
-                text: "",
-                bg: "transparent",
-                color: "black",
-                size: 10,
-              })
-            }
-          onMouseLeave={() =>
-              cursorEvents.leave({ bg: "transparent", color: "#fff" })
-            }
             className="
               group bg-white text-black w-70 h-20 rounded-full border-2
               py-2 flex justify-between px-2
               hover:bg-black hover:cursor-none
-              transition-all duration-200 hover:text-white
+              transition-all duration-300 hover:text-white
               md:group md:bg-white md:text-black md:w-70 md:h-20 md:rounded-full md:border-2
               md:py-2 md:flex md:justify-between md:px-2
               md:hover:bg-black md:hover:cursor-none
-              md:transition-all md:duration-200 md:hover:text-white
+              md:transition-all md:duration-300 md:hover:text-white
             "
           >
-            <a href="#contact" className="pt-2 md:pt-2">
+            <a 
+            // href="#contact"
+              href="/files/Gauri_nagariya_Resume_.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+             className="pt-2 md:pt-2">
               <span
                 className="
-                  text-2xl px-4 transition-colors duration-200
-                  md:text-2xl md:px-4 md:transition-colors md:duration-200
+                  text-2xl px-4 transition-colors duration-300
+                  md:text-2xl md:px-4 md:transition-colors md:duration-300
                 "
               >
-                Get in touch
+                My Resume
               </span>
 
               <span
                 className="
                   text-4xl px-3 py-2 my-0 ml-9 rounded-full
                   group-hover:bg-[#fdf571] group-hover:text-black
-                  transition-all duration-200
+                  transition-all duration-300
                   md:text-4xl md:px-3 md:py-2 md:my-0 md:ml-9 md:rounded-full
                   md:group-hover:bg-[#fdf571] md:group-hover:text-black
-                  md:transition-all md:duration-200
+                  md:transition-all md:duration-300
                 "
               >
                 →
@@ -767,11 +761,15 @@ export default function HeroWithNav() {
             <div className="flex justify-between p-0 w-0 text-black md:flex md:justify-between md:p-6 md:w-full md:text-black" />
 
             <div
-                  onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "black", color: "#fff" })
-                  }className="flex flex-col justify-between w-full text-black md:flex md:justify-between md:w-full md:text-black md:flex-row">
-              <div className="w-full border-l text-2xl font-bold px-6 py-10 space-y-3 flex flex-col
-               md:w-full md:border-l md:text-5xl md:font-bold md:px-6 md:py-18 md:flex md:flex-col md:space-y-6">
+              onMouseLeave={() =>
+                cursorEvents.leave({ bg: "black", color: "#fff" })
+              }
+              className="flex flex-col justify-between w-full text-black md:flex md:justify-between md:w-full md:text-black md:flex-row"
+            >
+              <div
+                className="w-full border-l text-2xl font-bold px-6 py-10 space-y-3 flex flex-col
+               md:w-full md:border-l md:text-5xl md:font-bold md:px-6 md:py-18 md:flex md:flex-col md:space-y-6"
+              >
                 <a
                   onMouseEnter={() =>
                     cursorEvents.enter({
@@ -804,22 +802,22 @@ export default function HeroWithNav() {
                   className="md:px-0 md:text-nowrap md:space-y-6 md:pt-0  px-0 text-nowrap space-y-3"
                 >
                   <li>
-                    <a href="#about"  onClick={() => setShowNav(false)}>
+                    <a href="#about" onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> ABOUT
                     </a>
                   </li>
                   <li>
-                    <a href="#skills"  onClick={() => setShowNav(false)}>
+                    <a href="#skills" onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> SKILLS
                     </a>
                   </li>
                   <li>
-                    <a href="#projects"  onClick={() => setShowNav(false)}>
+                    <a href="#projects" onClick={() => setShowNav(false)}>
                       <span className="text-gray-300">#</span> PROJECTS
                     </a>
                   </li>
                   <li>
-                    <a href="#certificates"  onClick={() => setShowNav(false)}>
+                    <a href="#certificates" onClick={() => setShowNav(false)}>
                       <span className="text-gray-300"># </span>CERTIFICATES
                     </a>
                   </li>
@@ -873,7 +871,7 @@ export default function HeroWithNav() {
                   onMouseLeave={() =>
                     cursorEvents.leave({ bg: "black", color: "#fff" })
                   }
-                  href="https://www.linkedin.com/in/gauri-n-22ap4081"
+                  href="https://www.linkedin.com/in/gauri-nagariya/"
                   target="_blank"
                 >
                   Linkedin

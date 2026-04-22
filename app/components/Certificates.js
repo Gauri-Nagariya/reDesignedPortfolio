@@ -13,14 +13,14 @@ const Certificates = () => {
         Recognizing Skills & Success
       </div>
 
-      <div className="md:flex md:flex-row md:pt-26 flex flex-row pt-4">
+      <div className="md:flex md:flex-row md:pt-16 flex flex-row pt-4">
         <div className="md:bg-white md:h-full md:w-[40vw] md:font-semibold md:text-5xl md:pr-14 md:py-10 md:text-left md:text-wrap md:leading-12 md:block hidden">
           I have earned certificates and achievements that reflect my{" "}
           <span className=" bg-[#fdf571]">skills and dedication</span>, and
           commitment to growth and excellence across various fields.
         </div>
         <div className="md:bg-white md:h-80 md:w-[55vw] md:pl-26 bg-white h-80 w-full px-0">
-          <div
+           <div
             onMouseEnter={() =>
               cursorEvents.enter({
                 text: "VIEW",
@@ -36,6 +36,56 @@ const Certificates = () => {
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
             <span className=" text-gray-400 font-bold pr-4">01</span>
+            <a
+              href="/files/sih.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Smart India Hackathon (SIH) – Finalist{" "}
+            </a>
+          </div>
+
+          <div
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "VIEW",
+                bg: "#fdf571",
+                color: "black",
+                size: 100,
+              })
+            }
+            onMouseLeave={
+              () => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+            }
+            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
+            border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
+          >
+            <span className=" text-gray-400 font-bold pr-4">02</span>
+            <a
+              href="/files/AWS Academy Cloud Architecting.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AWS Academy Cloud Architecting{" "}
+            </a>
+          </div>
+         
+          <div
+            onMouseEnter={() =>
+              cursorEvents.enter({
+                text: "VIEW",
+                bg: "#fdf571",
+                color: "black",
+                size: 100,
+              })
+            }
+            onMouseLeave={
+              () => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+            }
+            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
+            border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
+          >
+            <span className=" text-gray-400 font-bold pr-4">03</span>
             <a
               href="/files/React JS Certification Course (GFG).pdf"
               target="_blank"
@@ -60,7 +110,7 @@ const Certificates = () => {
            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
-            <span className=" text-gray-400 font-bold pr-4">02</span>
+            <span className=" text-gray-400 font-bold pr-4">04</span>
             <a
               href="/files/SQL Intermediate (HackerRank).pdf"
               target="_blank"
@@ -85,7 +135,7 @@ const Certificates = () => {
            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
-            <span className=" text-gray-400 font-bold pr-4">03</span>
+            <span className=" text-gray-400 font-bold pr-4">05</span>
             <a
               href="/files/NPTEL.pdf"
               target="_blank"
@@ -110,7 +160,7 @@ const Certificates = () => {
            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
-            <span className=" text-gray-400 font-bold pr-4">04</span>
+            <span className=" text-gray-400 font-bold pr-4">06</span>
             <a
               href="/files/Introduction to Generative AI (simplilearn).pdf"
               target="_blank"
@@ -135,7 +185,7 @@ const Certificates = () => {
             className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
-            <span className=" text-gray-400 font-bold pr-4">05</span>
+            <span className=" text-gray-400 font-bold pr-4">07</span>
             <a
               href="/files/Introduction to Modern AI (cisco).pdf"
               target="_blank"
@@ -160,7 +210,7 @@ const Certificates = () => {
            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
             border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
           >
-            <span className=" text-gray-400 font-bold pr-4">06</span>
+            <span className=" text-gray-400 font-bold pr-4">08</span>
             <a
               href="/files/Introduction to Prompt Engineering.pdf"
               target="_blank"
@@ -170,30 +220,7 @@ const Certificates = () => {
             </a>
           </div>
 
-          <div
-            onMouseEnter={() =>
-              cursorEvents.enter({
-                text: "VIEW",
-                bg: "#fdf571",
-                color: "black",
-                size: 100,
-              })
-            }
-            onMouseLeave={
-              () => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-            }
-            className="md:border-b md:border-gray-300 md:py-4 md:text-3xl  md:transition-all md:duration-400 md:ease-out md:hover:py-6 md:hover:text-4xl
-            border-b border-gray-300 py-2 text-2xl  transition-all duration-400 ease-out hover:py-4 hover:text-3xl"
-          >
-            <span className=" text-gray-400 font-bold pr-4">07</span>
-            <a
-              href="/files/sih.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Smart India Hackathon (SIH) – Finalist{" "}
-            </a>
-          </div>
+        
         </div>
       </div>
     </motion.div>

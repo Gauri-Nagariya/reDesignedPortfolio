@@ -164,7 +164,7 @@ const Contact = () => {
             >
               <li>
                 <a
-                  href="https://www.linkedin.com/in/gauri-n-22ap4081/"
+                  href="https://www.linkedin.com/in/gauri-nagariya/"
                   target="_blank"
                 >
                   Linkedin

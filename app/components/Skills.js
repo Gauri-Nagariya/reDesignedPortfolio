@@ -66,8 +66,8 @@ const Skills = () => {
     <motion.div
       ref={ref}
       style={{ backgroundColor: bgColor }}
-      className="md:h-[170vh] md:flex md:flex-col md:pt-30  md:items-center md:overflow-hidden md:relative
-                  h-[120vh] flex flex-col pt-30  items-center overflow-hidden relative"
+      className="md:h-[190vh] md:flex md:flex-col md:pt-30  md:items-center md:overflow-hidden md:relative
+                  h-[130vh] flex flex-col pt-30  items-center overflow-hidden relative"
     >
       <motion.p
 
@@ -420,7 +420,7 @@ const Skills = () => {
   className="
     grid grid-cols-3 gap-3 pt-16 px-4
     sm:grid-cols-3
-    md:grid-cols-6 md:grid-rows-2 md:pt-30
+    md:grid-cols-6 md:grid-rows-3 md:pt-30
   "
 >
   {/* HTML */}
@@ -614,6 +614,108 @@ const Skills = () => {
     </div>
     <div className={`${orbitron.className} text-xs sm:text-base md:text-lg pt-2 text-center`}>
       VERSION <br /> CONTROL
+    </div>
+  </div>
+
+    {/* Redux */}
+  <div
+    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+    onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    <div className={`${BlackOpsOne.className} text-md sm:text-lg md:text-5xl font-extrabold`}>
+      Redux
+    </div>
+  </div>
+
+    {/* Figma */}
+    <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+   onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+      <Image src="/Figma.png" alt="Next" fill className="object-contain" />
+    </div>
+    <div className={`text-xs sm:text-base md:text-2xl pt-2`}>
+FIGMA    </div>
+  </div>
+
+    {/* rest-api */}
+  <div
+    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+    onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+      <Image src="/rest-api.svg" alt="CSS" fill className="object-contain" />
+    </div>
+    <div className={`rest-api`}>
+      REST API
+    </div>
+  </div>
+
+    {/* Postman */}
+  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+   onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    {/* <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+      <Image src="/postman.png" alt="postman" fill className="object-contain" />
+    </div> */}
+    <div className={`${orbitron.className} text-xs sm:text-base md:text-2xl pt-2 text-center`}>
+      POSTMAN
+    </div>
+  </div>
+
+    {/* Vercel */}
+  <div
+    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+    onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+      <Image src="/Vercel_Symbol_1.png" alt="Vercel" fill className="object-contain" />
+    </div>
+    <div className={"text-xs sm:text-base md:text-xl pt-2 font-bold"}>
+      Vercel
+    </div>
+  </div>
+
+    {/* Responsive Web Design */}
+  <div
+    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+    onMouseEnter={() =>
+      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
+    }
+    onMouseLeave={() =>
+      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+    }
+  >
+    {/* <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+      <Image src="/technology.png" alt="CSS" fill className="object-contain" />
+    </div> */}
+    <div className={`${limelight.className} text-sm sm:text-lg md:text-2xl`}>
+      Responsive<br/>  Web Design
     </div>
   </div>
 </motion.div>

@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cursorEvents } from "../components/cursorController";
-
 
 const Intro = () => {
   const [showNav, setShowNav] = useState(true);
@@ -23,17 +21,6 @@ const Intro = () => {
           exit={{ y: "-100%" }}
           transition={{ type: "spring", stiffness: 80, damping: 18 }}
           className="fixed inset-0 bg-[#fdf571] z-[9999] overflow-hidden modal-selection select-text"
-                      onMouseEnter={() =>
-                        cursorEvents.enter({
-                          text: "",
-                          bg: "black",
-                          color: "black",
-                          size: 16,
-                        })
-                      }
-                      // onMouseLeave={() =>
-              // cursorEvents.leave({ bg: "black", color: "#fff" })
-            // }
         >
           <motion.div
             className="absolute inset-0 flex items-center"
