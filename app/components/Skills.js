@@ -66,7 +66,7 @@ const Skills = () => {
       ref={ref}
       style={{ backgroundColor: bgColor }}
       className="md:h-[190vh] md:flex md:flex-col md:pt-30  md:items-center md:overflow-hidden md:relative
-                  h-[150vh] flex flex-col pt-30  items-center overflow-hidden relative"
+                  h-[140vh] flex flex-col pt-30  items-center overflow-hidden relative"
     >
       <motion.p
         onMouseLeave={() =>

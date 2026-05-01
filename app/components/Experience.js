@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <motion.div
       id="experience"
-      className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[120vh] px-6  py-2"
+      className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[120vh] px-6  py-14"
     >
       <div className="md:border-b md:border-gray-300 md:px-0 md:text-2xl md:py-6    border-b border-gray-300 px-0 text-2xl py-4">
         Experience
@@ -19,14 +19,14 @@ const Experience = () => {
       <div className="md:flex md:flex-row md:pt-16 flex flex-col pt-4 gap-10">
         <div className="md:bg-white md:h-full md:w-[40vw] md:font-semibold text-xl md:text-5xl md:pr-14 md:py-10 md:text-left md:text-wrap md:leading-10 md:block">
           <div>
-            NANOSTACK PVT. LTD.{" "}
-            <span className=" bg-[#fdf571] text-nowrap text-[36px]">
+            NANOSTACK PVT. LTD.{" "}<br/>
+            <span className=" bg-[#fdf571] text-nowrap text-[32px] md:text-[36px]">
               Mern Stack Developer
             </span>
             <br />
-            <span className="text-[36px]">Internship, On-Site</span>
+            <span className="text-[32px] md:text-[36px]">Internship, On-Site</span>
             <br />
-            <span className="text-[36px]">Feb 2026 - April 2026</span>
+            <span className="text-[32px] md:text-[36px]">Feb 2026 - April 2026</span>
           </div>
           <div className="flex flex-row gap-4 md:gap-12">
 
