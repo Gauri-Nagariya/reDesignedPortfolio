@@ -13,13 +13,13 @@ const Certificates = () => {
         Recognizing Skills & Success
       </div>
 
-      <div className="md:flex md:flex-row md:pt-16 flex flex-row pt-4">
+      <div className="md:flex md:flex-row md:pt-16 flex flex-col pt-4">
         <div className="md:bg-white md:h-full md:w-[40vw] md:font-semibold md:text-5xl md:pr-14 md:py-10 md:text-left md:text-wrap md:leading-12 md:block hidden">
           I have earned certificates and achievements that reflect my{" "}
           <span className=" bg-[#fdf571]">skills and dedication</span>, and
           commitment to growth and excellence across various fields.
         </div>
-        <div className="md:bg-white md:h-80 md:w-[55vw] md:pl-26 bg-white h-80 w-full px-0">
+        <div className="md:bg-white md:h-80 md:w-[55vw] md:pl-26 bg-white h-auto w-full px-0">
            <div
             onMouseEnter={() =>
               cursorEvents.enter({

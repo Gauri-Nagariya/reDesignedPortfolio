@@ -48,7 +48,7 @@ useEffect(() => {
 
   return (
     <motion.div id="projects" className="bg-white md:min-h-[120vh] md:px-0 md:py-10 md:pt-20
-                                            min-h-screen px-0 py-10 pt-10">
+                                            h-auto px-0 py-10 pt-10">
       <div className="md:border-b md:border-gray-300 md:mx-10 md:text-2xl md:py-6
                       border-b border-gray-300 mx-6 text-2xl py-2">
         What I’ve Built

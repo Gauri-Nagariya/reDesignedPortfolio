@@ -78,7 +78,7 @@ const Experience = () => {
 
         </div>
 
-        <div className="md:bg-white md:h-80 md:w-[52vw] md:pl-26 bg-white h-80 w-full px-0">
+        <div className="md:bg-white md:h-80 md:w-[52vw] md:pl-26 bg-white h-auto w-full px-0">
           <div
             className="md:py-4 md:text-3xl
             py-2 text-2xl"
