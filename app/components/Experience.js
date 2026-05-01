@@ -6,8 +6,8 @@ import { cursorEvents } from "./cursorController";
 const Experience = () => {
   return (
     <motion.div
-      id="certificates"
-      className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[120vh] px-6  py-8"
+      id="experience"
+      className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[120vh] px-6  py-2"
     >
       <div className="md:border-b md:border-gray-300 md:px-0 md:text-2xl md:py-6    border-b border-gray-300 px-0 text-2xl py-4">
         Experience
@@ -16,18 +16,20 @@ const Experience = () => {
         Where I’ve Applied My Skills
       </div>
 
-      <div className="md:flex md:flex-row md:pt-16 flex flex-row pt-4">
-        <div className="md:bg-white md:h-full md:w-[40vw] md:font-semibold md:text-5xl md:pr-14 md:py-10 md:text-left md:text-wrap md:leading-10 md:block hidden">
+      <div className="md:flex md:flex-row md:pt-16 flex flex-col pt-4 gap-10">
+        <div className="md:bg-white md:h-full md:w-[40vw] md:font-semibold text-xl md:text-5xl md:pr-14 md:py-10 md:text-left md:text-wrap md:leading-10 md:block">
           <div>
             NANOSTACK PVT. LTD.{" "}
             <span className=" bg-[#fdf571] text-nowrap text-[36px]">
               Mern Stack Developer
             </span>
             <br />
-            <span className="text-[36px]">Internship</span>
+            <span className="text-[36px]">Internship, On-Site</span>
             <br />
             <span className="text-[36px]">Feb 2026 - April 2026</span>
           </div>
+          <div className="flex flex-row gap-4 md:gap-12">
+
              <div
                      onMouseEnter={() =>
                        cursorEvents.enter({
@@ -40,16 +42,40 @@ const Experience = () => {
                      onMouseLeave={
                        () => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
                      }
-                     className="md:pt-20 md:text-[28px] pt-20 text-2xl"
+                     className="md:pt-20 md:text-[28px] pt-4 text-2xl"
                    >
                      <a
-                    //    href="/files/sih.pdf"
+                       href="/files/EXPERIENCE LETTER.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                     >
+                       Experience Letter
+                     </a>
+                   </div>
+                    <div
+                     onMouseEnter={() =>
+                       cursorEvents.enter({
+                         text: "VIEW",
+                         bg: "#fdf571",
+                         color: "black",
+                         size: 100,
+                       })
+                     }
+                     onMouseLeave={
+                       () => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+                     }
+                     className="md:pt-20 md:text-[28px] pt-4 text-2xl"
+                   >
+                     <a
+                       href="/files/Gauri Internship Certificate.pdf"
                        target="_blank"
                        rel="noopener noreferrer"
                      >
                        Certificate
                      </a>
                    </div>
+          </div>
+
         </div>
 
         <div className="md:bg-white md:h-80 md:w-[52vw] md:pl-26 bg-white h-80 w-full px-0">
@@ -58,11 +84,11 @@ const Experience = () => {
             py-2 text-2xl"
           >
                 <ul className="list-disc text-justify">
-                    <li>Worked on a live ERP project with 25+ modules, contributing to real-world business solutions</li>
-                    <li>Developed and integrated REST APIs to ensure seamless data flow between frontend and backend</li>
+                    <li>Contributed to a live ERP system with 25+ modules, building features that supported actual business operations</li>
+                    <li>Designed and integrated REST APIs to enable efficient data flow between frontend and backend systems</li>
                     <li>Transformed UI/UX designs into responsive, functional interfaces using modern frontend technologies</li>
-                    <li>Performed testing and debugging to improve performance and user experience</li>
-                    <li>Collaborated with the team to deliver scalable and efficient features</li>
+                    <li>Translated UI/UX designs into responsive, user-friendly interfaces and improved performance through debugging and testing</li>
+                    <li>Worked in a collaborative team environment, gaining experience in scalable architecture, database management, and real project workflows</li>
 
                 </ul>
           

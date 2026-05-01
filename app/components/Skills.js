@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { cursorEvents } from "../components/cursorController";
 
-
 import { Tangerine } from "next/font/google";
 
 const tangerine = Tangerine({
@@ -50,16 +49,16 @@ const Skills = () => {
 
   const bgColor = useTransform(
     scrollYProgress,
-   
+
     [0, 0.25, 1],
-    ["#000000", "#f0f0f0", "#ffffff"]
+    ["#000000", "#f0f0f0", "#ffffff"],
   );
   const slideLeftToRight = useTransform(scrollYProgress, [0, 1], ["6%", "20%"]);
 
   const slideRightToLeft = useTransform(
     scrollYProgress,
     [0, 1],
-    ["20%", "10%"]
+    ["20%", "10%"],
   );
 
   return (
@@ -67,13 +66,12 @@ const Skills = () => {
       ref={ref}
       style={{ backgroundColor: bgColor }}
       className="md:h-[190vh] md:flex md:flex-col md:pt-30  md:items-center md:overflow-hidden md:relative
-                  h-[130vh] flex flex-col pt-30  items-center overflow-hidden relative"
+                  h-[150vh] flex flex-col pt-30  items-center overflow-hidden relative"
     >
       <motion.p
-
-                  onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
-                  }
+        onMouseLeave={() =>
+          cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+        }
         style={{ x: slideLeftToRight }}
         className="md:text-[20vh] md:font-sans md:font-bold md:mb-10 md:text-nowrap md:tracking-tighter
                     text-[6vh] font-sans font-bold mb-4 text-nowrap tracking-tighter"
@@ -81,15 +79,16 @@ const Skills = () => {
         What I bring to the table<span className="text-[#fdf571]">.</span>
       </motion.p>
       <motion.p
-                  onMouseLeave={() =>
-                    cursorEvents.leave({ bg: "#fdf571", color: "#fff" }) 
-                  }
+        onMouseLeave={() =>
+          cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+        }
         style={{ x: slideRightToLeft }}
         className={`md:text-[20vh] md:tracking-tighter md:font-sans md:font-bold md:text-nowrap
                       text-[6vh] tracking-tighter font-sans font-bold text-nowrap`}
       >
-        What I bring to the table<span className="text-[#fdf571]">.</span> What I bring to the table<span className="text-[#fdf571]">.</span> What I bring to the
-        table<span className="text-[#fdf571]">.</span>
+        What I bring to the table<span className="text-[#fdf571]">.</span> What
+        I bring to the table<span className="text-[#fdf571]">.</span> What I
+        bring to the table<span className="text-[#fdf571]">.</span>
       </motion.p>
 
       {/* <motion.div id="skills" className="md:grid md:grid-cols-6 md:gap-3 md:grid-rows-2 md:pt-0
@@ -416,318 +415,495 @@ const Skills = () => {
       </motion.div> */}
 
       <motion.div
-  id="skills"
-  className="
+        id="skills"
+        className="
     grid grid-cols-3 gap-3 pt-16 px-4
     sm:grid-cols-3
     md:grid-cols-6 md:grid-rows-3 md:pt-30
   "
->
-  {/* HTML */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
-      <Image src="/div.png" alt="HTML" fill className="object-contain" />
-    </div>
-    <div className={`${BlackOpsOne.className} text-sm sm:text-lg md:text-3xl pt-2 tracking-widest`}>
-      HTML
-    </div>
-  </div>
+      >
+        {/* HTML */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+            <Image src="/div.png" alt="HTML" fill className="object-contain" />
+          </div>
+          <div
+            className={`${BlackOpsOne.className} text-sm sm:text-lg md:text-3xl pt-2 tracking-widest`}
+          >
+            HTML
+          </div>
+        </div>
 
-  {/* CSS */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/technology.png" alt="CSS" fill className="object-contain" />
-    </div>
-    <div className={`${tangerine.className} text-sm sm:text-lg md:text-3xl`}>
-      CSS
-    </div>
-  </div>
+        {/* CSS */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/technology.png"
+              alt="CSS"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className={`${tangerine.className} text-sm sm:text-lg md:text-3xl`}
+          >
+            CSS
+          </div>
+        </div>
 
-  {/* JS */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/online.png" alt="JS" fill className="object-contain" />
-    </div>
-    <div className="text-xs sm:text-base md:text-xl pt-2">JAVASCRIPT</div>
-  </div>
+        {/* JS */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image src="/online.png" alt="JS" fill className="object-contain" />
+          </div>
+          <div className="text-xs sm:text-base md:text-xl pt-2">JAVASCRIPT</div>
+        </div>
 
-  {/* MongoDB */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/cloud-storage.png" alt="MongoDB" fill className="object-contain" />
-    </div>
-    <div className="text-xs sm:text-base md:text-xl pt-2 font-bold">MONGODB</div>
-  </div>
+        {/* MongoDB */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/cloud-storage.png"
+              alt="MongoDB"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="text-xs sm:text-base md:text-xl pt-2 font-bold">
+            MONGODB
+          </div>
+        </div>
 
-  {/* Express */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20">
-      <Image src="/express.png" alt="Express" fill className="object-contain" />
-    </div>
-  </div>
+        {/* Express */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20">
+            <Image
+              src="/express.png"
+              alt="Express"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
 
-  {/* React */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/library.png" alt="React" fill className="object-contain" />
-    </div>
-    <div className="text-xs sm:text-base md:text-xl pt-2">REACT JS</div>
-  </div>
+        {/* React */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/library.png"
+              alt="React"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="text-xs sm:text-base md:text-xl pt-2">REACT JS</div>
+        </div>
 
-  {/* Node */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
-      <Image src="/node-js.png" alt="Node" fill className="object-contain" />
-    </div>
-    <div className="text-xs sm:text-base md:text-xl font-bold">NODE.JS</div>
-  </div>
+        {/* Node */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+            <Image
+              src="/node-js.png"
+              alt="Node"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="text-xs sm:text-base md:text-xl font-bold">
+            NODE.JS
+          </div>
+        </div>
 
-  {/* Next */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/next.png" alt="Next" fill className="object-contain" />
-    </div>
-    <div className={`${orbitron.className} text-xs sm:text-base md:text-xl pt-2`}>
-      NEXT.JS
-    </div>
-  </div>
+        {/* Next */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image src="/next.png" alt="Next" fill className="object-contain" />
+          </div>
+          <div
+            className={`${orbitron.className} text-xs sm:text-base md:text-xl pt-2`}
+          >
+            NEXT.JS
+          </div>
+        </div>
 
-  {/* MySQL */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
-      <Image src="/MYSQL.png" alt="MySQL" fill className="object-contain" />
-    </div>
-    <div className={`${goldman.className} text-xs sm:text-base md:text-xl pt-2`}>
-      MySQL
-    </div>
-  </div>
+        {/* MySQL */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+            <Image
+              src="/MYSQL.png"
+              alt="MySQL"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className={`${goldman.className} text-xs sm:text-base md:text-xl pt-2`}
+          >
+            MySQL
+          </div>
+        </div>
 
-  {/* Tailwind */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-1 w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10">
-      <Image src="/icons8-tailwind-css-48.png" alt="Tailwind" fill className="object-contain" />
-    </div>
-    <div className="text-xs sm:text-sm md:text-lg">TAILWIND CSS</div>
-  </div>
+        {/* Tailwind */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-1 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10">
+            <Image
+              src="/icons8-tailwind-css-48.png"
+              alt="Tailwind"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="text-xs sm:text-sm md:text-lg">TAILWIND CSS</div>
+        </div>
 
-  {/* Bootstrap */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-  
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-    >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/icons8-bootstrap-logo-100.png" alt="Bootstrap" fill className="object-contain" />
-    </div>
-    <div className={`${limelight.className} text-xs sm:text-base md:text-lg pt-2`}>
-      BOOTSTRAP
-    </div>
-  </div>
+        {/* Bootstrap */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/icons8-bootstrap-logo-100.png"
+              alt="Bootstrap"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className={`${limelight.className} text-xs sm:text-base md:text-lg pt-2`}
+          >
+            BOOTSTRAP
+          </div>
+        </div>
 
-  {/* Git */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
-      <Image src="/github.png" alt="Git" fill className="object-contain" />
-    </div>
-    <div className={`${orbitron.className} text-xs sm:text-base md:text-lg pt-2 text-center`}>
-      VERSION <br /> CONTROL
-    </div>
-  </div>
+        {/* Git */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+            <Image
+              src="/github.png"
+              alt="Git"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className={`${orbitron.className} text-xs sm:text-base md:text-lg pt-2 text-center`}
+          >
+            VERSION <br /> CONTROL
+          </div>
+        </div>
 
-    {/* Redux */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className={`${BlackOpsOne.className} text-md sm:text-lg md:text-5xl font-extrabold`}>
-      Redux
-    </div>
-  </div>
+        {/* Redux */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div
+            className={`${BlackOpsOne.className} text-md sm:text-lg md:text-5xl font-extrabold`}
+          >
+            Redux
+          </div>
+        </div>
 
-    {/* Figma */}
-    <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/Figma.png" alt="Next" fill className="object-contain" />
-    </div>
-    <div className={`text-xs sm:text-base md:text-2xl pt-2`}>
-FIGMA    </div>
-  </div>
+        {/* Figma */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/Figma.png"
+              alt="Next"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className={`text-xs sm:text-base md:text-2xl pt-2`}>FIGMA </div>
+        </div>
 
-    {/* rest-api */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/rest-api.svg" alt="CSS" fill className="object-contain" />
-    </div>
-    <div className={`rest-api`}>
-      REST API
-    </div>
-  </div>
+        {/* rest-api */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/rest-api.svg"
+              alt="CSS"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className={`rest-api`}>REST API</div>
+        </div>
 
-    {/* Postman */}
-  <div className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
-   onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    {/* <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
+        {/* Postman */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex flex-col items-center justify-center w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          {/* <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14">
       <Image src="/postman.png" alt="postman" fill className="object-contain" />
     </div> */}
-    <div className={`${orbitron.className} text-xs sm:text-base md:text-2xl pt-2 text-center`}>
-      POSTMAN
-    </div>
-  </div>
+          <div
+            className={`${orbitron.className} text-xs sm:text-base md:text-2xl pt-2 text-center`}
+          >
+            POSTMAN
+          </div>
+        </div>
 
-    {/* Vercel */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-      <Image src="/Vercel_Symbol_1.png" alt="Vercel" fill className="object-contain" />
-    </div>
-    <div className={"text-xs sm:text-base md:text-xl pt-2 font-bold"}>
-      Vercel
-    </div>
-  </div>
+        {/* Vercel */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+            <Image
+              src="/Vercel_Symbol_1.png"
+              alt="Vercel"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className={"text-xs sm:text-base md:text-xl pt-2 font-bold"}>
+            Vercel
+          </div>
+        </div>
 
-    {/* Responsive Web Design */}
-  <div
-    className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
-    onMouseEnter={() =>
-      cursorEvents.enter({ text: "SKILLS", bg: "#fdf571", color: "black", size: 100 })
-    }
-    onMouseLeave={() =>
-      cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
-    }
-  >
-    {/* <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
+        {/* Responsive Web Design */}
+        <div
+          className="bg-[#f2f2f2] rounded-2xl flex items-center justify-center gap-2 w-full aspect-square p-2 sm:p-3 md:p-4"
+          onMouseEnter={() =>
+            cursorEvents.enter({
+              text: "SKILLS",
+              bg: "#fdf571",
+              color: "black",
+              size: 100,
+            })
+          }
+          onMouseLeave={() =>
+            cursorEvents.leave({ bg: "#fdf571", color: "#fff" })
+          }
+        >
+          {/* <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
       <Image src="/technology.png" alt="CSS" fill className="object-contain" />
     </div> */}
-    <div className={`${limelight.className} text-sm sm:text-lg md:text-2xl`}>
-      Responsive<br/>  Web Design
-    </div>
-  </div>
-</motion.div>
-
+          <div
+            className={`${limelight.className} text-sm sm:text-lg md:text-2xl`}
+          >
+            Responsive
+            <br /> Web Design
+          </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
 
 export default Skills;
-
-
-
 
 // "use client";
 // import React, { useRef } from "react";

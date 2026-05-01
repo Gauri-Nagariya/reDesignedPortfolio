@@ -816,6 +816,11 @@ export default function HeroWithNav() {
                       <span className="text-gray-300">#</span> PROJECTS
                     </a>
                   </li>
+                   <li>
+                    <a href="#experience" onClick={() => setShowNav(false)}>
+                      <span className="text-gray-300"># </span>EXPERIENCE
+                    </a>
+                  </li>
                   <li>
                     <a href="#certificates" onClick={() => setShowNav(false)}>
                       <span className="text-gray-300"># </span>CERTIFICATES
