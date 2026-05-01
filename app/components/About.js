@@ -18,8 +18,8 @@ export default function About() {
       onMouseLeave={() => cursorEvents.leave({ bg: "#fdf571", color: "#fff" })}
       id="about"
       ref={ref}
-      className="md:h-[160vh] md:pt-20 md:text-justify md:bg-black md:flex md:items-center md:justify-center md:border-0 md:text-white
-                  h-[70vh] pt-0 text-justify bg-black flex items-center justify-center text-white border-0"
+      className="md:min-h-[160vh] md:pt-20 md:text-justify md:bg-black md:flex md:items-center md:justify-center md:border-0 md:text-white
+                  min-h-screen pt-0 text-justify bg-black flex items-center justify-center text-white border-0"
     >
       <p
         className="md:text-6xl md:font-normal md:px-18 md:flex md:flex-wrap md:gap-x-2 md:leading-18  md:text-justify

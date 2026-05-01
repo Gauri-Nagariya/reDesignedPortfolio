@@ -5,7 +5,7 @@ import { cursorEvents } from "./cursorController";
 
 const Certificates = () => {
   return (
-    <motion.div id="certificates" className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[200vh] px-6  py-[520px]">
+    <motion.div id="certificates" className="md:bg-white md:min-h-[120vh] md:px-10 md:py-10 bg-white min-h-screen px-6 py-14">
       <div className="md:border-b md:border-gray-300 md:px-0 md:text-2xl md:py-6    border-b border-gray-300 px-0 text-2xl py-4">
         Achievements & Certificates
       </div>

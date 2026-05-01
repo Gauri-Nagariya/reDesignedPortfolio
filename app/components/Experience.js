@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <motion.div
       id="experience"
-      className="md:bg-white md:h-[120vh] md:px-10  md:py-10    bg-white h-[120vh] px-6  py-14"
+      className="md:bg-white md:min-h-[120vh] md:px-10 md:py-10 bg-white min-h-screen px-6 py-14"
     >
       <div className="md:border-b md:border-gray-300 md:px-0 md:text-2xl md:py-6    border-b border-gray-300 px-0 text-2xl py-4">
         Experience
