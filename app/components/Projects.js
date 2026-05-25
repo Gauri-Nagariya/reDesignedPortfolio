@@ -724,18 +724,14 @@ useEffect(() => {
       {/* LEFT CONTENT */}
       <div className="md:w-full md:p-6 md:pb-0 w-full p-6 pb-0">
         <h2 className="md:text-6xl md:font-extrabold text-4xl font-extrabold">
-          MYDRIVE <br />
+          MEDITRACK <br />
           <span className="md:text-2xl text-xl">
-            Drive Backend Project
+            Full-Stack Healthcare Management Application
           </span>
         </h2>
 
         <p className="text-xl pt-4 text-justify">
-          A full backend + server-rendered project built with Node.js,
-                Express, MongoDB, JWT, Multer, and EJS. Users can register,
-                login, upload files, view them, delete them, download them, and
-                update their profile. All uploaded files are stored directly
-                inside MongoDB using Binary Buffer (not locally).
+          A comprehensive full-stack application built with React.js frontend and Node.js backend, enabling users to securely manage medical records, appointments, and health information. Users can register, login, upload medical documents, view them, download them, delete them, and maintain their health profile. All medical records and user data are securely stored in PostgreSQL/MongoDB with encrypted authentication.
         </p>
 
         <div className="md:text-xl md:text-justify md:py-4 md:block hidden">
@@ -743,20 +739,21 @@ useEffect(() => {
           <ul className="list-disc list-inside pl-4">
             <li>User Registration & Login with JWT</li>
             <li>Password hashing using Bcrypt</li>
-            <li>File upload using Multer</li>
-            <li>Files stored directly in MongoDB</li>
-            <li>View, Download & Delete files</li>
-            <li>Profile update</li>
-            <li>Form validation</li>
-            <li>Server-side rendering with EJS</li>
+            <li>File upload using Multer for medical documents</li>
+            <li>Files stored securely in database with proper indexing</li>
+            <li>View, Download & Delete medical records</li>
+            <li>Profile creation and update</li>
+            {/* <li>Form validation (client-side & server-side)</li> */}
+            <li>Secure session management with token-based authentication</li>
+            <li>RESTful API architecture</li>
+            {/* <li>User authorization and access control</li> */}
           </ul>
         </div>
 
         <div className="md:text-lg md:block hidden">
           <h1 className="font-extrabold text-xl">Technology Stack</h1>
           <p>
-            Node.js, Express.js, MongoDB Atlas, JWT, Multer, EJS,
-            dotenv, bcrypt
+           React.js, Node.js, Express.js, PostgreSQL/MongoDB, JWT, Multer, Bcrypt, dotenv, RESTful APIs, JavaScript (ES6+)
           </p>
         </div>
       </div>
@@ -804,14 +801,14 @@ useEffect(() => {
                        left-0 flex flex-row gap-10 justify-between px-0 my-8 bottom-10 mx-6"
           >
             <a
-              href="https://drive-x6zy.onrender.com/"
+              href="https://meditrackproject.vercel.app/"
               target="_blank"
               className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
             >
               LIVE PROJECT
             </a>
             <a
-              href="https://github.com/Gauri-Nagariya/Drive_BackendProject"
+              href="https://github.com/Gauri-Nagariya/MediTrack"
               target="_blank"
               className="md:font-bold md:text-4xl md:py-4 font-bold text-xl py-0"
             >
